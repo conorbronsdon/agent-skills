@@ -2,6 +2,8 @@
 
 # agent-skills
 
+> **Maintenance mode.** This project is stable and receives security fixes. New features aren't planned, but issues and pull requests are still welcome.
+
 Production-tested agent skills. Drop-in markdown files that teach a coding agent a specific workflow — Claude Code, Codex, Cursor, or OpenCode.
 
 [![GitHub stars](https://img.shields.io/github/stars/conorbronsdon/agent-skills?style=social)](https://github.com/conorbronsdon/agent-skills/stargazers)
