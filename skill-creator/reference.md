@@ -1,6 +1,6 @@
 # Skill Frontmatter & Behavior Reference
 
-**Snapshot:** 2026-07-13, from https://code.claude.com/docs/en/skills (frontmatter reference + invocation control + lifecycle sections).
+**Snapshot:** 2026-08-18, from https://code.claude.com/docs/en/skills (frontmatter reference + invocation control + lifecycle sections).
 **Staleness policy:** pinned snapshot — warn and continue when stale; never update mid-generation. Canonical copy + weekly drift CI: https://github.com/conorbronsdon/agent-skill-builder (sync from there).
 
 ## Frontmatter fields (all optional)
@@ -12,17 +12,21 @@
 | `when_to_use` | Extra trigger phrases/examples, appended to description in the listing (counts toward the same cap). |
 | `argument-hint` | Autocomplete hint, e.g. `[issue-number]` or `[filename] [format]`. |
 | `arguments` | Named positional args for `$name` substitution. Space-separated string or YAML list; names map to positions in order. |
-| `disable-model-invocation` | `true` = only the user can invoke. Removes the description from Claude's context entirely (no ambient cost), prevents preloading into subagents, and (v2.1.196+) blocks scheduled-task invocation. Default `false`. |
+| `disable-model-invocation` | `true` = only the user can invoke. Removes the description from Claude's context entirely (no ambient cost), prevents preloading into subagents, and (v2.1.196+) blocks scheduled-task invocation. Default `false`. Boolean fields also accept `yes`/`no`, `on`/`off`, and `1`/`0` in current Claude Code. |
 | `user-invocable` | `false` = hidden from the `/` menu; Claude-only background knowledge. Menu visibility only — does not block Skill-tool access. Default `true`. |
-| `allowed-tools` | Tools pre-approved (no permission prompt) while the skill is active. A grant, **not** a restriction — everything else stays callable under normal permissions. Scope tightly: `Bash(git add *)`. Takes effect in project skills only after workspace trust. |
+| `allowed-tools` | Tools pre-approved (no permission prompt) for the invoking turn. A grant, **not** a restriction — everything else stays callable under normal permissions. Scope tightly: `Bash(git add *)`. Workspace trust does not gate the grant, so review project skills before running Claude Code in a repository. |
 | `disallowed-tools` | Tools *removed* from the pool while active (e.g. `AskUserQuestion` for autonomous loops). Clears on the next user message. |
 | `model` | Model override while active (rest of turn). Same values as `/model`, or `inherit`. |
 | `effort` | Effort override: `low`/`medium`/`high`/`xhigh`/`max`. Default: inherits session. |
 | `context` | `fork` = run in an isolated subagent; skill body becomes the prompt. Only for explicit tasks — guidelines-only content returns nothing useful. |
 | `agent` | Subagent type when `context: fork` (`Explore`, `Plan`, `general-purpose`, or custom from `.claude/agents/`). Default `general-purpose`. Explore/Plan skip CLAUDE.md for a smaller context. |
+| `background` | With `context: fork`, `true` runs the subagent in the background (default); `false` waits for its result in the invoking turn. Requires Claude Code v2.1.218+. |
 | `hooks` | Hooks scoped to the skill's lifecycle. |
 | `paths` | Glob patterns; auto-load only when working on matching files. |
 | `shell` | `bash` (default) or `powershell` for `` !`cmd` `` injection. |
+| `metadata` | Free-form YAML map for tooling-defined string metadata. Claude Code accepts it but does not act on it. |
+| `license` | License name or reference from the portable Agent Skills specification. Claude Code accepts it but does not act on it. |
+| `compatibility` | Environment requirements, up to 500 characters, from the portable Agent Skills specification. Claude Code accepts it but does not act on it. |
 
 ## String substitutions in the body
 
