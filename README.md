@@ -40,7 +40,6 @@ These are patterns I built for my own daily work and generalized for anyone to u
 | [agent-memory-kit](https://github.com/conorbronsdon/agent-memory-kit) ↗ | `/dream rot`, `/dream lint` | Agent memory accumulates and never forgets — this adds the curation pass that catches rot and contradictions before the agent is confidently wrong |
 | [agent-workspace](https://github.com/conorbronsdon/agent-workspace) ↗ | Same commands, packaged | Standalone package of Session Management, Reconcile, and Recover above, with a configurable state layout (`workspace.yaml`) |
 | [agent-skill-builder](https://github.com/conorbronsdon/agent-skill-builder) ↗ | Same command, hardened | Standalone home of Skill Creator above — adds a machine-checkable validator and weekly spec-drift CI |
-
 | [eunuch-mode](https://github.com/conorbronsdon/eunuch-mode) ↗ | `/eunuch-mode` | A deliberately silly palace-adviser persona: courtly flattery, candid counsel, and an explicit exit |
 
 Rows marked ↗ live in their own repo. Everything else installs from this one. An ↗ row that repackages a skill listed above runs those same commands, so no command is listed twice.
