@@ -33,7 +33,7 @@ These are patterns I built for my own daily work and generalized for anyone to u
 | [Skill Creator](skill-creator/) | `/skill-creator` | Skill generators rot and skip invocation/context decisions — this scaffolds against the live spec |
 | [Guest Circuit](guest-circuit/) | `/guest-circuit` | Pitching a podcast guest blind re-asks what three other shows asked — this maps their circuit and finds the unclaimed angle |
 | [Angel Diligence](angel-diligence/) | `/angel-diligence` | Startup diligence is ad hoc and easy to hallucinate; this produces a cited deal memo with a verdict scaffold, not a recommendation |
-| [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) ↗ | `/clean-ai-writing` | AI writing has tells — 61 pattern categories across vocabulary, structure, rhythm |
+| [avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing) ↗ | `/clean-ai-writing` | AI writing has tells — 74 pattern categories across vocabulary, structure, rhythm |
 | [grokkable-output](https://github.com/conorbronsdon/grokkable-output) ↗ | `"what did you find?"` | Agent reports bury the verdict under headers and arrow chains — this puts the answer in sentence one, with detail layered so you can stop reading anywhere |
 | [demo-gif-skill](https://github.com/conorbronsdon/demo-gif-skill) ↗ | `"add a demo gif"` | Demo GIFs rot the moment a tool's output changes — this scripts a reproducible one (vhs/Playwright) into any README |
 | [repo-audit](https://github.com/conorbronsdon/repo-audit) ↗ | `"audit this repo"` | A README claims something is blocked; nothing blocks it — this finds the mechanism behind every claim and grades it Enforced, Advisory, or Guidance |
@@ -204,7 +204,7 @@ Skills built standalone:
 
 - **[repo-audit](https://github.com/conorbronsdon/repo-audit)** — Check a repo's claims against its own code, or get it ready to open-source
 - **[agent-memory-kit](https://github.com/conorbronsdon/agent-memory-kit)** — Capture, recall, and a read-only curator that finds rot in agent memory
-- **[avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing)** — Catch and fix AI writing patterns (61 pattern categories)
+- **[avoid-ai-writing](https://github.com/conorbronsdon/avoid-ai-writing)** — Catch and fix AI writing patterns (74 pattern categories)
 - **[demo-gif-skill](https://github.com/conorbronsdon/demo-gif-skill)** — Add a reproducible demo GIF to any repo's README
 
 Elsewhere:
