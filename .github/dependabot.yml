@@ -1,0 +1,11 @@
+version: 2
+updates:
+  # GitHub Actions are pinned to full commit SHAs (tag in a trailing comment);
+  # Dependabot keeps the SHA and the comment current.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ["*"]

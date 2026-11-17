@@ -68,6 +68,9 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: read
+
 concurrency:
   # Serialize: two runs publishing the same slug race on the registry's version
   # check and the loser fails on an already-taken version.
@@ -89,7 +92,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - name: Validate manifest and scan for credential-shaped files
         run: python3 scripts/clawhub-sync.py --check
 
@@ -99,13 +102,13 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           # clawhub-sync.py pins --source-commit from HEAD, which a shallow
           # checkout still resolves correctly.
           fetch-depth: 1
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: "22"
 
